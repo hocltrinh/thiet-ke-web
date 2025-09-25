@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Japan Pack System</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Top bar */
+.top-bar {
+  background: #2e468a;
+  color: white;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.top-bar .right a {
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: white;
+}
+
+.logo {
+  height: 80px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.navbar a:hover {
+  color: #2c428a;
+}
+
+.icons i {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  text-align: center;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #3fae2a;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #2c7e1f;
+}
+
+/* Footer */
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 180px;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 99;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  font-weight: normal;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+  color: #2c428a;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart span {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #555;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 40px;
+    }
+    .card {
+      width: 300px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .card h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 15px 0 10px;
+    }
+    .card p {
+      font-size: 14px;
+      color: #555;
+      padding: 0 15px 20px;
+    }
+    .btn-wrapper {
+      text-align: center;
+      margin: 20px 0 40px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #1e3a8a;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #2563eb;
+    }
+    .fa-arrow-right {
+  font-size: 14px;
+  color: white ; 
+  margin-left: 10px;
+}
+.intro-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 60px 80px;
+    }
+    .intro-left {
+      flex: 1;
+    }
+    .intro-left img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .intro-right {
+      flex: 1;
+    }
+    .intro-right h4 {
+      color: #4CAF50;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .intro-right h2 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .intro-right p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 30px;
+      margin-bottom: 30px;
+    }
+    .features li {
+      list-style: none;
+      font-size: 15px;
+      color: #333;
+      position: relative;
+      padding-left: 20px;
+    }
+    .features li::before {
+      content: "✔";
+      color: #4CAF50;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #1e3a8a;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 15px;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #2563eb;
+    }
+
+    
+    @media (max-width: 900px) {
+      .intro-section {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+    }
+     section.products {
+      padding: 60px 20px;
+      
+    }
+
+    .products h4 {
+      
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .products h2 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Khối grid canh giữa */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1000px;   /* Giới hạn chiều rộng */
+      margin: 0 auto;      /* Canh giữa */
+      justify-content: center;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 50px;
+    }
+
+    .badge.hot {
+      background: #e11d48;
+    }
+
+    .product-card h3 {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+   
+    .price {
+      color: #e11d48;
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .rating {
+      color: gold;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    /* Overlay khi hover */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 213, 79, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .product-card:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay button {
+      background: #4CAF50;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .see-all {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .see-all a {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #1e3a8a;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 15px;
+      transition: background 0.3s ease;
+    }
+
+    .see-all a:hover {
+      background: #2563eb;
+      
+    }
+    
+  </style>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  
+  <div class="top-bar">
+    <div class="left">
+      <i class="fa fa-phone"></i> (+84) 913 567 310 - Ms.Trang (Vietnamese) /
+      (+84) 989 167 101 - Mr.Phương (Japanese/English)
+      <i class="fa fa-envelope"></i> info@jpsvn.com
+    </div>
+    <div class="right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#">Z</a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+
+  
+  <header>
+    <img src="/Thiet ke web/html/image/J (500 x 500 px) (400 x 80 px) (580 x 116 px) (3).png" alt="Logo" class="logo">
+     <div class="navbar">
+      <a href="#">Trang Chủ</a>
+      <a href="#">Giới Thiệu</a>
+
+      <div class="dropdown">
+        <a href="#">Sản Phẩm ▼</a>
+        <div class="dropdown-content">
+          <a href="#">Máy đóng gói</a>
+          <a href="#">Phụ kiện</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Tin Tức ▼</a>
+        <div class="dropdown-content">
+          <a href="#">Tuyển dụng</a>
+          <a href="#">Đồ bảo hộ</a>
+          <a href="#">Đồ dùng nhà bếp</a>
+          <a href="#">Hộp đựng sushi/ Thực phẩm Nhật Bản</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Dịch Vụ ▼</a>
+        <div class="dropdown-content">
+          <a href="#">Dịch vụ hỗ trợ</a>
+
+          <a href="#">Dịch vụ hậu mãi</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Thư Viện ▼</a>
+        <div class="dropdown-content">
+          <a href="#">Thư viện ảnh</a>
+          <a href="#">Video</a>
+        </div>
+      </div>
+
+      <a href="#">Liên Hệ</a>
+    </div>
+    <div class="icons">
+      <i class="fa fa-user"></i>
+      <i class="fa fa-search"></i>
+      <i class="fa fa-shopping-cart"></i>
+    </div>
+  </header>
+
+  
+  <section class="banner">
+    <img src="/Thiet ke web/html/image/Screenshot 2025-09-23 211244.png" alt="Robot Nấu Cơm">
+   
+  </section>
+<div class="container">
+    
+    <div class="card">
+      <img src="/Thiet ke web/html/image/Screenshot 2025-09-23 213718.png" alt="Phụ kiện bảo hộ">
+      <h3>Các Loại Phụ Kiện Bảo Hộ, Vệ Sinh Nhà Bếp/ Nhà Hàng</h3>
+      <p>Các vật dụng bảo hộ, chuyên dụng với độ tiện ích và chất lượng vượt trội.</p>
+    </div>
+    
+    <div class="card">
+      <img src="/Thiet ke web/html/image/Screenshot 2025-09-23 213827.png" alt="Hộp đựng thực phẩm">
+      <h3>Hộp Đựng Thực Phẩm</h3>
+      <p>Đa dạng về kích cỡ, kiểu dáng kết hợp cùng công nghệ chống đọng sương giúp sản phẩm của bạn tươi ngon.</p>
+    </div>
+   
+    <div class="card">
+      <img src="/Thiet ke web/html/image/Screenshot 2025-09-23 213935.png" alt="Khay đựng thực phẩm">
+      <h3>Khay Đựng Thực Phẩm</h3>
+      <p>Sử dụng khay đựng cho các loại thực phẩm tươi sống, giúp bạn tối ưu về chi phí.</p>
+    </div>
+  </div>
+  <div class="btn-wrapper">
+    <a href="#" class="btn">Mua sắm ngay <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+  </div>
+  <section class="intro-section">
+    
+    <div class="intro-left">
+      <img src="/Thiet ke web/html/image/2024.png" alt="Video giới thiệu">
+    </div>
+
+    
+    <div class="intro-right">
+      <h4>TỰ TIN ĐỨNG ĐẦU VỀ CHẤT LƯỢNG</h4>
+      <h2>Hướng đến các sản phẩm an toàn, thân thiện với môi trường</h2>
+      <p>
+        CÔNG TY TNHH JAPAN PACK SYSTEM VIỆT NAM chính thức được thành lập vào ngày 11 tháng 10 năm 2013. 
+        Trải qua nhiều năm hình thành và phát triển công ty đã đạt được những thành tựu đáng kể. 
+        Cùng với sự phát triển của công ty, đời sống của cán bộ, nhân viên cũng không ngừng được nâng cao. 
+        Với nhiều năm gắn bó với nghề, JAPAN PACK SYSTEM VIỆT NAM đã và đang tạo dựng cho mình một thương hiệu – 
+        một niềm tin với khách hàng trên cả nước.
+      </p>
+      <ul class="features">
+        <li>Dịch vụ khách hàng tuyệt vời</li>
+        <li>Chất lượng sản phẩm</li>
+        <li>Giao hàng nhanh chóng</li>
+        <li>Giá cả cạnh tranh</li>
+        <li>Thuận tiện và dễ dàng</li>
+        <li>Đa dạng sản phẩm</li>
+      </ul>
+      <a href="#" class="btn">THÔNG TIN THÊM</a>
+    </div>
+  </section>
+  <section class="products">
+    <h4>HÀNG BÁN CHẠY</h4>
+    <h2>Sản Phẩm Nổi Bật</h2>
+
+    <div class="grid">
+      <!-- Sản phẩm 1 -->
+      <div class="product-card">
+        <span class="badge">MỚI</span>
+        <img src="/Thiet ke web/html/image/8(1).png" alt="Lá Trang Trí Baran Long">
+        <h3>Lá Trang Trí Baran Long</h3><br>
+        <div class="price">81.972 đ</div>
+        <div class="rating">★★★★★</div>
+        <div class="overlay">
+          <button>+ Thêm giỏ hàng</button>
+        </div>
+      </div>
+
+      <!-- Sản phẩm 2 -->
+      <div class="product-card">
+        <img src="/Thiet ke web/html/image/7(1).png" alt="Hộp Đựng Thực Phẩm Isohama 6 Yuu">
+        <h3>Hộp Đựng Thực Phẩm Isohama 6 Yuu</h3>
+        <div class="price">Liên hệ</div>
+        <div class="rating">★★★★★</div>
+        <div class="overlay">
+          <button>+ Thêm giỏ hàng</button>
+        </div>
+      </div>
+
+      <!-- Sản phẩm 3 -->
+      <div class="product-card">
+        <span class="badge">HOT</span>
+        <img src="/Thiet ke web/html/image/6.png" alt="Túi Cơm Nắm Onigiri">
+        <h3>Túi Cơm Nắm Onigiri</h3><br>
+        <div class="price">Liên hệ</div>
+        <div class="rating">★★★★★</div>
+        <div class="overlay">
+          <button>+ Thêm giỏ hàng</button>
+        </div>
+        
+      </div>
+      
+      <div class="product-card">
+      <span class="badge">MỚI</span>
+      <img src="/Thiet ke web/html/image/Bản sao của Bản sao của Nội dung đoạn văn bản của bạn (13).png" alt="Hộp Nhựa Hazara 3-3">
+      <h3>Khay Đựng Thực Phẩm Hazara</h3>
+      <div class="price">Liên hệ</div>
+      <div class="rating">★★★★★</div>
+      <div class="overlay">
+        <button>+ Thêm giỏ hàng</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+        <span class="badge">HOT</span>
+        <img src="/Thiet ke web/html/image/6.png" alt="Túi Cơm Nắm Onigiri">
+        <h3>Túi Cơm Nắm Onigiri</h3>
+        <div class="price">1.728.000 đ</div>
+        <div class="rating">★★★★★</div>
+        <div class="overlay">
+          <button>+ Thêm giỏ hàng</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <span class="badge">HOT</span>
+        <img src="/Thiet ke web/html/image/6.png" alt="Túi Cơm Nắm Onigiri">
+        <h3>Túi Cơm Nắm Onigiri</h3>
+        <div class="price">Liên hệ</div>
+        <div class="rating">★★★★★</div>
+        <div class="overlay">
+          <button>+ Thêm giỏ hàng</button>
+    </div>
+    </div>
+    <div class="product-card">
+        <span class="badge">HOT</span>
+        <img src="/Thiet ke web/html/image/6.png" alt="Túi Cơm Nắm Onigiri">
+        <h3>Túi Cơm Nắm Onigiri</h3>
+        <div class="price">Liên hệ</div>
+        <div class="rating">★★★★★</div>
+        <div class="overlay">
+          <button>+ Thêm giỏ hàng</button>
+    </div>
+    </div>
+    <div class="product-card">
+        <span class="badge">HOT</span>
+        <img src="/Thiet ke web/html/image/6.png" alt="Túi Cơm Nắm Onigiri">
+        <h3>Túi Cơm Nắm Onigiri</h3>
+        <div class="price">Liên hệ</div>
+        <div class="rating">★★★★★</div>
+        <div class="overlay">
+          <button>+ Thêm giỏ hàng</button>
+        </div>
+        </div>
+    </div>
+    <!-- Xem tất cả -->
+    <div class="see-all">
+      <a href="#">TẤT CẢ SẢN PHẨM</a>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Japan Pack System Vietnam Co.,Ltd</p>
+    <p>
+      <i class="fa fa-globe"></i> www.jpsvn.com |
+      <i class="fa fa-envelope"></i> sales@jpsvn.com |
+      <i class="fa fa-phone"></i> (+84) 913 567 310
+    </p>
+  </footer>
+
+</body>
+</html>
